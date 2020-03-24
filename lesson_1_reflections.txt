@@ -1,0 +1,69 @@
+How did viewing a diff between two versions of a file help you see the bug that
+was introduced?
+
+    it's shows lines that were changed
+
+How could having easy access to the entire history of a file make you a more
+efficient programmer in the long term?
+
+    you can tell where the changes were made over time and if those changes were logical
+
+What do you think are the pros and cons of manually choosing when to create a
+commit, like you do in Git, vs having versions automatically saved, like Google
+docs does?
+    pros, you control the commits, you don't have to worry about if the commit contained all logical aspects, stuff like google docs saves randomly	
+    cons, you may not be able to revert back if you are not saving consistently
+
+Why do you think some version control systems, like Git, allow saving multiple
+files in one commit, while others, like Google Docs, treat each file separately?
+
+    it's quicker and allows you to commit changes that are logically related
+
+How can you use the commands git log and git diff to view the history of files?
+
+    git log will show you history of commits and diff will show you the changes
+
+How might using version control make you more confident to make changes that
+could break something?
+
+    version control would allow you to revert back to previous changes
+
+Now that you have your workspace set up, what do you want to try using Git for?
+
+    my own development project
+
+
+commands
+git log   (log of commits)
+git diff %gitid% %gitid% (differences in commits within the repository)
+git log --stat     (gives you more info about the commits)
+git log --oneline (gives 1 line of the commit, just SHA)
+git log -p (shows changes to the file, p is short for patch)
+git --version  (version of get installed)
+git clone %repo_url% (clone a repo url like https://github.com/udacity/asteroids.git)
+git config --global color.ui auto (turns on coloring in the log to make it easier to read)
+git checkout %gitid% (check out a gitid like b0678b161fcf74467ed3a63110557e3d6229cfa6)
+q  (stops view log)
+
+You have to install Git
+A good rule of thumb is to make one commit per logical change
+Git Errors and Warnings Solution
+Should not be doing an octopus
+Octopus is a strategy Git uses to combine many different versions of code together. This message can appear if you try to use this strategy in an inappropriate situation.
+You are in 'detached HEAD' state
+HEAD is what Git calls the commit you are currently on. You can “detach” the HEAD by switching to a previous commit, which we’ll see in the next video. Despite what it sounds like, it’s actually not a bad thing to detach the HEAD. Git just warns you so that you’ll realize you’re doing it.
+Panic! (the 'impossible' happened)
+This is a real error message, but it’s not output by Git. Instead it’s output by GHC, the compiler for a programming language called Haskell. It’s reserved for particularly surprising errors!
+Takeaway We hope these errors and warnings amused you as much as they amused us! Now that you know what kind of errors Git can throw, you’re ready to start checking out previous versions of files with Caroline.
+
+we decided to use sublime text editor so one of the things we want to do is add sublime to .bash_profile and create an alias inside this file
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+git config --global core.editor "'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -n -w"   (options n new window, w wait to close file to continue)
+now you can launch sublime, type subl on the command line to get the editor
+
+extra git commands
+git config --global push.default upstream
+git config --global merge.conflictstyle diff
+
+
+rb9594 ((df03538...) *) asteroids $ vi game.js    (with the extra commands your prompt string will need different, the revision display along with asterik to say someone altered a file)

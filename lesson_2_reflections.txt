@@ -1,0 +1,64 @@
+What happens when you initialize a repository? Why do you need to do it?
+it creates hidden files like .git, it converts directory into repo to track history
+
+How is the staging area different from the working directory and the repository?
+What value do you think it offers?
+staging area shows you whats getting added to the repository, and what files that are not getting added
+
+How can you use the staging area to make sure you have one commit per logical
+change?
+it allows you to package your code together in the staging area and then commit it
+
+What are some situations when branches would be helpful in keeping your history
+organized? How would branches help?
+it allows you organize your code and create a branch to break off things that are different, unique, experimenting, it allows you to
+compartmentalize your code
+
+How do the diagrams help you visualize the branch structure?
+it shows the the sequence of commits, branch and commit dependencies
+
+What is the result of merging two branches together? Why do we represent it in
+the diagram the way we do? 
+we now have 1 branch with changes combined, log shows same commit it in coins and master, we also now deleted coins and have master branch
+
+What are the pros and cons of automatic merging vs. always doing merges
+manually?
+automatic quick and easy
+manually great for complex changes, allows you to review before commiting
+
+git init  (run this inside empty directory or directory that contains files to create a repository)
+git add %file_name% (this is how you add files from working directory to staging area)
+git status (shows you what is being tracked in the staging directory, and whats left in working directory that hasn't been addded to staging)
+git commit  (this will open your default editor you aliased in .bash_profile), look at the style guide link below
+git commit -m "Commit message"  (another way to do commit, more generic)
+git diff (compares files in staging directory to working directory that are different)
+git diff --staged (compares files in staging directory to repository that are different)
+git reset %file_name% (if you accidentally add to staging, you can remove it with this command)
+git reset --hard (discards changes in working and staging directory, this is not reversable be careful)
+git checkout master (checkout master branch) 
+git branch (shows branches)
+git branch easy-mode (creates branch called easy mode)
+git checkout easy-mode (checkout branch)
+git checkout -b easy-mode (shortcut, creates branch and does checkout)
+git log --graph --oneline master coins (visiual representation of commit history)
+git gc (if branch is deleted and leaves some commits unreachable from existing branches, those commits will be accessible by commit id until you run garbage collection)
+git merge master coins (merge master and coins branches, you must checkout master branch first, then do the merge, on the merge it doesn't matter which branch is listed first or second)
+git show %commit_id% (shows difference between commit and its parent)
+git branch -d coins (deletes branch)
+git merge --abort (restore your files to their state before you started the merge)
+when commiting there are three stages, working directory, staging area, and repository
+the staging area will have the most current copy of the repository until you add changes to it, working directory will have same files with updates you made
+style guide for commits can be found at http://udacity.github.io/git-styleguide/
+
+detached head means you are checking out code that is not part of a branch
+head means current commit
+
+if you check out a branch and make a commit, the branch label automatically updates to the new commit and stays checkedout
+
+the current last commit on a branch is sometimes referred to as the tip
+
+handling merge conflicts, when you try to merge you may have an issue with specific files, open that file in your branch and look for the crazy characters that show HEAD, acnestor, and current branch, make the change, run git status, notice besides the file name it will say "both game.js", then run git add game.js, then git status again to see all conflicts resolved, but you are still merging, run git commit to finish the merge
+style guid for commits
+http://udacity.github.io/git-styleguide/
+cheat sheet
+https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf

@@ -1,0 +1,47 @@
+When would you want to use a remote repository rather than keeping all your work
+local?
+so you can share you code with other users or possibly access it from another computer
+
+Why might you want to always pull changes manually rather than having Git
+automatically stay up-to-date with your remote repository?
+automatic pull could overlay your changes in local
+automatic push could push changes before they are completed
+
+Describe the differences between forks, clones, and branches.  When would you
+use one instead of another?
+
+fork=copying repository on github to another repository on github
+clone=copying reposity on github to your local
+branches=different save paths on your local repository
+
+What is the benefit of having a copy of the last known state of the remote
+stored locally?
+
+you can identify the changes made to the remote
+
+How would you collaborate without using Git or GitHub?  What would be easier,
+and what would be harder?
+
+i don't have a way of sharing code, github provides a place to put my code and allow others to clone and update it
+
+When would you want to make changes in a separate branch rather than directly in
+master?  What benefits does each approach have?
+
+people can review the separate branch changes and see if they agree with your changes
+
+password caching (https://help.github.com/articles/caching-your-github-password-in-git/)
+remotes are the repositories on github
+git remote (list the remotes)
+git remote add origin https://github.com/rb9594/reflections.git (adds remote called origin with url to reflections repo on github, when you have only 1 remote, its normal to call it origin)
+git remote -v (shows more information about remote inluding fetch and push paths)
+git push origin master (push changes to github origin(reflections) master branch)
+password caching (https://help.github.com/articles/caching-your-github-password-in-git/)
+git pull origin master (pull changes from github (this is basically git fetch origin + git merge origin/master)
+to fork a repository on github, find the fork glyphicon for the repository you want to clone, that will create the forked repository under your account, now clone it to your local.  when you clone to yourlocal the remote is already set up, run git remote -v and you will see this
+
+if you want others to be able to collaborate on your repository find the settings, click collaborators, add github user name
+ 
+fast forward merge is when the branch your merging into is an ancestor of the branch you are moving from
+
+on github repository you will see something called a pull request, this is how you merge branches on the the github repository.  You would go to your branch and do a "pull request", and then select the   base branch you want to merge into... you are saying please "pull" branch different-oil (changed to canola oil) into the master branch... think of this as pushing the change to master branch on git hub,  if the pull request runs without any conflicts, on github you will see a merge pull request
+
